@@ -1,0 +1,469 @@
+/* Hierarchy Section - Tekken Style */
+.hierarchy-section {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.hierarchy-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      ellipse at 25% 35%,
+      rgba(139, 69, 19, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 75% 65%,
+      rgba(139, 69, 19, 0.03) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hierarchy-content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1600px;
+  height: 90vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* LEFT SIDE: Member Preview */
+.member-preview {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 69, 19, 0.05) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  border: 2px solid rgba(139, 69, 19, 0.3);
+  overflow: hidden;
+}
+
+.preview-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.preview-instruction {
+  text-align: center;
+  opacity: 0.6;
+}
+
+.preview-icon {
+  font-size: 4rem;
+  color: #c9a876;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.preview-instruction p {
+  font-family: "Crimson Text", serif;
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  color: #b8b8b8;
+  font-style: italic;
+}
+
+/* Preview Card */
+.preview-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.preview-card.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.preview-photo {
+  flex: 1;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+}
+
+.preview-photo .photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 20, 16, 0.9) 0%,
+    rgba(10, 10, 10, 0.95) 100%
+  );
+}
+
+.preview-photo .placeholder-icon {
+  font-size: 8rem;
+  color: #c9a876;
+  opacity: 0.4;
+}
+
+.preview-details {
+  padding: 2.5rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.preview-name {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #f5f5f5;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.preview-role {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  color: #c9a876;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.preview-domain {
+  font-family: "Crimson Text", serif;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  color: #b8b8b8;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.preview-divider {
+  color: rgba(139, 69, 19, 0.4);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* RIGHT SIDE: Member Selection */
+.member-selection {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(139, 69, 19, 0.03) 100%
+  );
+  border: 2px solid rgba(139, 69, 19, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.selection-header {
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 2px solid rgba(139, 69, 19, 0.2);
+}
+
+.section-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.title-underline {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 69, 19, 0.6) 20%,
+    rgba(139, 69, 19, 0.6) 80%,
+    transparent 100%
+  );
+  margin: 0 auto;
+}
+
+/* Selection Scroll Area */
+.selection-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 69, 19, 0.4) rgba(0, 0, 0, 0.3);
+}
+
+.selection-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.selection-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.selection-scroll::-webkit-scrollbar-thumb {
+  background: rgba(139, 69, 19, 0.4);
+  border-radius: 4px;
+}
+
+.selection-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 69, 19, 0.6);
+}
+
+/* Group Labels */
+.group-label {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  color: #c9a876;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.leadership-group,
+.elders-group {
+  margin-bottom: 2.5rem;
+}
+
+/* Domain Sections */
+.domain-section {
+  margin-bottom: 2rem;
+}
+
+.domain-label {
+  margin-bottom: 1rem;
+}
+
+.domain-label h4 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: #c9a876;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.domain-label p {
+  font-family: "Crimson Text", serif;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  color: #888;
+  font-style: italic;
+}
+
+/* Selection Grid */
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Select Card */
+.select-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.select-card:hover {
+  transform: translateY(-3px);
+}
+
+.select-card.active {
+  transform: translateY(-3px);
+}
+
+.select-card.active .select-photo {
+  border-color: rgba(139, 69, 19, 0.8);
+  box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+}
+
+.select-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 2px solid rgba(139, 69, 19, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(139, 69, 19, 0.05) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.select-card:hover .select-photo {
+  border-color: rgba(139, 69, 19, 0.6);
+}
+
+.select-photo .photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 20, 16, 0.9) 0%,
+    rgba(10, 10, 10, 0.95) 100%
+  );
+}
+
+.select-photo .placeholder-icon {
+  font-size: 2.5rem;
+  color: #c9a876;
+  opacity: 0.4;
+}
+
+.select-info {
+  text-align: center;
+}
+
+.select-name {
+  font-family: "Cinzel", serif;
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  color: #e8e8e8;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.select-role {
+  font-family: "Crimson Text", serif;
+  font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+  color: #c9a876;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Edited Note */
+.edited-note {
+  text-align: center;
+  font-family: "Crimson Text", serif;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  color: rgba(139, 69, 19, 0.4);
+  font-style: italic;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hierarchy-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    height: auto;
+    min-height: 90vh;
+  }
+
+  .member-preview {
+    order: 2;
+    min-height: 400px;
+  }
+
+  .member-selection {
+    order: 1;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hierarchy-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .selection-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .selection-scroll {
+    padding: 1rem;
+  }
+
+  .selection-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .preview-details {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hierarchy-content {
+    grid-template-rows: 40% 60%;
+  }
+
+  .selection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .preview-icon {
+    font-size: 3rem;
+  }
+
+  .preview-photo .placeholder-icon {
+    font-size: 5rem;
+  }
+}
+
+/* Image replacement instructions */
+/*
+  TO ADD PHOTOS:
+  
+  Replace .photo-placeholder with an img tag in both preview and select cards:
+  
+  <img src="path/to/image.jpg" alt="Member Name" class="member-image">
+  
+  Add this CSS:
+  
+  .member-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+*/

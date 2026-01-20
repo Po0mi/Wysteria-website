@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Lost in the Wilderness</title>
+    <link rel="stylesheet" href="404.css" />
+  </head>
+  <body>
+    <!-- Three.js Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Content Overlay -->
+    <div class="content-overlay">
+      <div class="glitch-wrapper">
+        <h1 class="glitch-text" data-text="404">404</h1>
+      </div>
+
+      <div class="message-container">
+        <h2 class="subtitle">Lost in the Wilderness</h2>
+        <p class="description">
+          This path leads nowhere. Perhaps you should return to the main road.
+        </p>
+      </div>
+
+      <div class="button-container">
+        <a href="index.html" class="return-button">
+          <span class="button-icon">↺</span>
+          <span class="button-text">Return Home</span>
+        </a>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="floating-elements">
+        <div class="floating-symbol" data-symbol="道">道</div>
+        <div class="floating-symbol" data-symbol="修">修</div>
+        <div class="floating-symbol" data-symbol="武">武</div>
+        <div class="floating-symbol" data-symbol="心">心</div>
+        <div class="floating-symbol" data-symbol="義">義</div>
+      </div>
+    </div>
+
+    <!-- Particle Effect Overlay -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/404.js"></script>
+  </body>
+</html>

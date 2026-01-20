@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wysteria</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="guild_activities-culture.css" />
+    <link rel="stylesheet" href="hierarchy.css" />
+    <link rel="stylesheet" href="why.css" />
+  </head>
+  <body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle menu">
+      <div class="hamburger-icon">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+    </button>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+      <div class="mobile-menu-content">
+        <!-- Mobile Menu Logo -->
+        <div class="mobile-menu-logo"></div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+          <a href="#about" class="mobile-menu-option">About</a>
+          <div class="mobile-menu-divider"></div>
+          <a href="#about" class="mobile-menu-option">Requirements</a>
+          <div class="mobile-menu-divider"></div>
+          <a href="#guild-activities" class="mobile-menu-option"
+            >Guild Activities & Culture</a
+          >
+          <div class="mobile-menu-divider"></div>
+          <a href="#why-wysteria" class="mobile-menu-option">Why Wysteria</a>
+          <div class="mobile-menu-divider"></div>
+          <a
+            href="https://discord.gg/your-server"
+            class="mobile-menu-option secondary"
+            target="_blank"
+            >Join Discord</a
+          >
+        </nav>
+
+        <p class="mobile-menu-close">Tap outside to close</p>
+      </div>
+    </div>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-indicator" id="scrollIndicator">
+      <!-- Progress line fill -->
+      <div class="progress-line-fill" id="progressLineFill"></div>
+
+      <!-- Section dots -->
+      <a href="#main-menu" class="progress-dot" data-section="main-menu">
+        <div class="progress-dot-circle"></div>
+        <span class="progress-dot-label">Home</span>
+      </a>
+
+      <a href="#about" class="progress-dot" data-section="about">
+        <div class="progress-dot-circle"></div>
+        <span class="progress-dot-label">About</span>
+      </a>
+
+      <a
+        href="#guild-activities"
+        class="progress-dot"
+        data-section="guild-activities"
+      >
+        <div class="progress-dot-circle"></div>
+        <span class="progress-dot-label">Activities</span>
+      </a>
+
+      <a href="#hierarchy" class="progress-dot" data-section="hierarchy">
+        <div class="progress-dot-circle"></div>
+        <span class="progress-dot-label">Hierarchy</span>
+      </a>
+
+      <a href="#why-wysteria" class="progress-dot" data-section="why-wysteria">
+        <div class="progress-dot-circle"></div>
+        <span class="progress-dot-label">Why Us</span>
+      </a>
+    </div>
+
+    <!-- Loader Screen -->
+    <section id="loader-screen" class="loader-screen active">
+      <video autoplay muted loop playsinline class="loader-video">
+        <source src="background/hero-background.mp4" type="video/mp4" />
+      </video>
+      <div class="border-overlay"></div>
+      <div class="dirt-overlay"></div>
+      <div class="vignette-overlay"></div>
+      <div class="loader-content">
+        <div class="logo-container">
+          <div class="guild-logo"></div>
+        </div>
+
+        <div class="start-prompt">
+          <p class="prompt-text">Press anywhere to begin</p>
+        </div>
+
+        <div class="loader-footer">
+          <p class="copyright-text">© 2026 Wysteria Guild</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Menu (Hidden Initially) -->
+    <section id="main-menu" class="hero-menu">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="background/hero-background.mp4" type="video/mp4" />
+      </video>
+      <div class="border-overlay"></div>
+      <div class="dirt-overlay"></div>
+      <div class="vignette-overlay"></div>
+      <div class="menu-layout">
+        <div class="game-logo">
+          <div class="logo-image"></div>
+        </div>
+        <div class="sub-title">
+          <!-- <h2>A Guild vield in mystery and tradition</h2> -->
+        </div>
+        <!-- Add this to your HTML inside the .hero-menu section -->
+        <div class="arrow-indicator">
+          <svg
+            class="scroll-arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 9L12 16L19 9"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <nav class="main-menu">
+          <a href="#about" class="menu-option">
+            <span class="option-text">About</span>
+            <span class="option-underline"></span>
+          </a>
+
+          <a href="#about" class="menu-option">
+            <span class="option-text">Requirements</span>
+            <span class="option-underline"></span>
+          </a>
+
+          <a href="#guild-activities" class="menu-option">
+            <span class="option-text">Guild Activities & Culture</span>
+            <span class="option-underline"></span>
+          </a>
+
+          <a href="#why-wysteria" class="menu-option">
+            <span class="option-text">Why Wysteria</span>
+            <span class="option-underline"></span>
+          </a>
+
+          <a href="404.html" class="menu-option secondary">
+            <span class="option-text">Join Discord</span>
+            <span class="option-underline"></span>
+          </a>
+        </nav>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="dirt-overlay"></div>
+      <div class="about-content">
+        <!-- Main content area -->
+        <div class="about-main">
+          <div class="about-header">
+            <h2 class="section-title">About Us</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <div class="about-text">
+            <p class="intro-text">
+              Hey there! We're a
+              <span class="highlight">PvX-competitive-focused guild</span>
+              looking for daily active and friendly players to join our growing
+              community.
+            </p>
+
+            <p class="story-text">
+              Here's the deal: Wysteria started as a group of randoms and
+              newbies I met along the way in-game. We've built something special
+              — a guild where
+              <span class="highlight">patience, growth, and good vibes</span>
+              matter more than being a pro from day one.
+            </p>
+
+            <p class="story-text">
+              Whether you're experienced or still learning, you're welcome here.
+              We help each other out, run content together, and actually enjoy
+              the game without the toxicity you find in other guilds.
+            </p>
+
+            <p class="closing-text">
+              If you're looking for a chill but committed community to call
+              home, this might be it.
+            </p>
+
+            <div class="signature">
+              <span class="signature-dash">—</span>
+              <span class="signature-name">Xeikee</span>
+              <span class="signature-title">(Guild Leader)</span>
+            </div>
+
+            <!-- Requirements Button -->
+            <div class="requirements-cta">
+              <button class="requirements-btn" id="openRequirements">
+                <span class="btn-text">View Requirements</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Decorative elements -->
+          <div class="ink-splash ink-splash-1"></div>
+          <div class="ink-splash ink-splash-2"></div>
+        </div>
+      </div>
+
+      <!-- Atmospheric particles -->
+      <div class="particles"></div>
+    </section>
+
+    <!-- Requirements Modal -->
+    <div class="modal" id="requirementsModal">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-container">
+        <button class="modal-close" id="closeModal">
+          <span class="close-line close-line-1"></span>
+          <span class="close-line close-line-2"></span>
+        </button>
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Requirements</h3>
+            <div class="modal-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+          </div>
+
+          <div class="modal-body">
+            <ul class="requirements-list">
+              <li class="requirement-item">
+                <span class="req-icon">✦</span>
+                <span class="req-text"
+                  >Maintain
+                  <strong>4000+ weekly guild contribution</strong></span
+                >
+              </li>
+              <li class="requirement-item">
+                <span class="req-icon">✦</span>
+                <span class="req-text"
+                  >Be active and
+                  <strong>attend guild events regularly</strong></span
+                >
+              </li>
+              <li class="requirement-item">
+                <span class="req-icon">✦</span>
+                <span class="req-text"
+                  >Complete <strong>Guild Tasks & Missions</strong></span
+                >
+              </li>
+              <li class="requirement-item">
+                <span class="req-icon">✦</span>
+                <span class="req-text"
+                  >Be active in <strong>Discord</strong> (we coordinate
+                  everything there)</span
+                >
+              </li>
+              <li class="requirement-item">
+                <span class="req-icon">✦</span>
+                <span class="req-text"
+                  ><strong>1 day+ offline without notice = removal</strong> (we
+                  need reliable members)</span
+                >
+              </li>
+            </ul>
+
+            <div class="requirements-note">
+              <p>
+                We're not asking for perfection — just
+                <strong>consistency and communication</strong>. If something
+                comes up, let us know. We're flexible with people who
+                communicate.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <div class="modal-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="guild-section" id="guild-activities">
+      <video autoplay muted loop playsinline class="why-video">
+        <source src="background/guild-background.mp4" type="video/mp4" />
+      </video>
+      <div class="border-overlay"></div>
+      <div class="dirt-overlay"></div>
+      <div class="vignette-overlay"></div>
+      <div class="guild-section-content">
+        <!-- Decorative corner elements -->
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+
+        <!-- Main content area -->
+        <div class="guild-main">
+          <div class="guild-header">
+            <h2 class="section-title">Guild Activities & Culture</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <!-- Tabs Navigation -->
+          <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="activities">
+              <span class="tab-icon">⚔</span>
+              <span class="tab-text">Guild Activities</span>
+            </button>
+            <button class="tab-btn" data-tab="culture">
+              <span class="tab-icon">✦</span>
+              <span class="tab-text">Guild Culture</span>
+            </button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="tabs-content">
+            <!-- Guild Activities Tab -->
+            <div class="tab-pane active" id="activities">
+              <p class="timezone-note">All times GMT+8</p>
+
+              <div class="activities-grid">
+                <!-- Daily Activities -->
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <h3 class="activity-title">Daily</h3>
+                    <div class="activity-accent"></div>
+                  </div>
+                  <div class="activity-body">
+                    <div class="activity-item">
+                      <span class="activity-bullet">✦</span>
+                      <div class="activity-details">
+                        <span class="activity-name">Guild Party</span>
+                        <span class="activity-time">9:00 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Weekly Activities -->
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <h3 class="activity-title">Weekly</h3>
+                    <div class="activity-accent"></div>
+                  </div>
+                  <div class="activity-body">
+                    <div class="day-group">
+                      <h4 class="day-label">Saturdays</h4>
+                      <div class="activity-item">
+                        <span class="activity-bullet">—</span>
+                        <div class="activity-details">
+                          <span class="activity-name">Test Your Skill #1</span>
+                          <span class="activity-time">4:00 PM</span>
+                        </div>
+                      </div>
+                      <div class="activity-item">
+                        <span class="activity-bullet">—</span>
+                        <div class="activity-details">
+                          <span class="activity-name">Breaking Army #1</span>
+                          <span class="activity-time">5:00 PM</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="day-group">
+                      <h4 class="day-label">Sundays</h4>
+                      <div class="activity-item">
+                        <span class="activity-bullet">—</span>
+                        <div class="activity-details">
+                          <span class="activity-name">Test Your Skill #2</span>
+                          <span class="activity-time">4:00 PM</span>
+                        </div>
+                      </div>
+                      <div class="activity-item">
+                        <span class="activity-bullet">—</span>
+                        <div class="activity-details">
+                          <span class="activity-name">Breaking Army #2</span>
+                          <span class="activity-time">5:00 PM</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Other Activities -->
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <h3 class="activity-title">Others</h3>
+                    <div class="activity-accent"></div>
+                  </div>
+                  <div class="activity-body">
+                    <div class="activity-item">
+                      <span class="activity-bullet">✦</span>
+                      <div class="activity-details">
+                        <span class="activity-name">Hero's Realm</span>
+                        <span class="activity-time">TBA</span>
+                      </div>
+                    </div>
+                    <p class="activity-note">
+                      We coordinate based on member availability
+                    </p>
+
+                    <div class="activity-item">
+                      <span class="activity-bullet">✦</span>
+                      <div class="activity-details">
+                        <span class="activity-name"
+                          >All guild buffs activated upon unlock</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="schedule-note">
+                <p>
+                  <strong>Note:</strong> Most events are scheduled between
+                  <strong>8:00 PM – 11:30 PM (GMT+8)</strong>. Please check if
+                  this works with your local time-zone before applying.
+                </p>
+              </div>
+
+              <div class="divider-line">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+            </div>
+
+            <!-- Guild Culture Tab -->
+            <div class="tab-pane" id="culture">
+              <div class="culture-intro">
+                <p class="culture-lead">
+                  We're strictly <strong>non-toxic</strong> and
+                  <strong>drama-free</strong>. Seriously.
+                </p>
+              </div>
+
+              <div class="culture-rules">
+                <div class="culture-item">
+                  <span class="culture-icon">✦</span>
+                  <span class="culture-text">Respect every member</span>
+                </div>
+                <div class="culture-item">
+                  <span class="culture-icon">✦</span>
+                  <span class="culture-text"
+                    >No harassment, toxicity, or unnecessary drama</span
+                  >
+                </div>
+                <div class="culture-item">
+                  <span class="culture-icon">✦</span>
+                  <span class="culture-text">Help each other grow</span>
+                </div>
+                <div class="culture-item">
+                  <span class="culture-icon">✦</span>
+                  <span class="culture-text"
+                    >Communicate if you have issues</span
+                  >
+                </div>
+              </div>
+
+              <div class="culture-warning">
+                <p>
+                  <strong>Toxicity is not tolerated</strong> — you'll be removed
+                  immediately, no warnings.
+                </p>
+              </div>
+
+              <div class="culture-closing">
+                <p>
+                  We've worked hard to build a positive environment, and we
+                  protect it fiercely. If you're chill, supportive, and actually
+                  want to enjoy the game with good people, you'll fit right in.
+                </p>
+              </div>
+
+              <div class="divider-line">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hierarchy-section" id="hierarchy">
+      <div class="border-overlay"></div>
+      <div class="dirt-overlay"></div>
+      <div class="vignette-overlay"></div>
+      <div class="hierarchy-content">
+        <!-- Left Side: Member Preview -->
+        <div class="member-preview">
+          <div class="preview-placeholder" id="previewPlaceholder">
+            <div class="preview-instruction">
+              <span class="preview-icon">✦</span>
+              <p>Hover over a member to view details</p>
+            </div>
+          </div>
+
+          <!-- Preview Content (hidden by default, shown on hover) -->
+          <div class="preview-card" id="previewCard">
+            <div class="preview-photo">
+              <div class="photo-placeholder large">
+                <span class="placeholder-icon">✦</span>
+              </div>
+            </div>
+            <div class="preview-details">
+              <h3 class="preview-name">Member Name</h3>
+              <p class="preview-role">Role</p>
+              <p class="preview-domain">Domain</p>
+              <div class="preview-divider">━━━━━━━━━━━━━━━━━━━━</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Member Selection Grid -->
+        <div class="member-selection">
+          <div class="selection-header">
+            <h2 class="section-title">Hierarchy</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <div class="selection-scroll">
+            <!-- Guild Leadership -->
+            <div class="leadership-group">
+              <h3 class="group-label">Leadership</h3>
+              <div class="selection-grid">
+                <div
+                  class="select-card"
+                  data-name="Xeikee"
+                  data-role="Guild Master"
+                  data-domain=""
+                  data-icon="👑"
+                >
+                  <div class="select-photo">
+                    <div class="photo-placeholder">
+                      <img
+                        src="assets/xeikee.jpg"
+                        alt="Member Name"
+                        class="member-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="select-info">
+                    <h4 class="select-name">Xeikee</h4>
+                    <p class="select-role">Guild Master</p>
+                  </div>
+                </div>
+
+                <div
+                  class="select-card"
+                  data-name="Shakya"
+                  data-role="Vice Guild Master"
+                  data-domain=""
+                  data-icon="⚔"
+                >
+                  <div class="select-photo">
+                    <div class="photo-placeholder">
+                      <img
+                        src="assets/shakya.jpg"
+                        alt="Member Name"
+                        class="member-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="select-info">
+                    <h4 class="select-name">Shakya</h4>
+                    <p class="select-role">Vice Guild Master</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Elders Section -->
+            <div class="elders-group">
+              <h3 class="group-label">Elders (5 Domains)</h3>
+
+              <!-- Immortal Orchards -->
+              <div class="domain-section">
+                <div class="domain-label">
+                  <h4>Immortal Orchards</h4>
+                  <p>Operations (PvE)</p>
+                </div>
+                <div class="selection-grid">
+                  <div
+                    class="select-card"
+                    data-name="JoshTwist"
+                    data-role="Elder"
+                    data-domain="Immortal Orchards"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/joshtwist.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">JoshTwist</h4>
+                    </div>
+                  </div>
+
+                  <div
+                    class="select-card"
+                    data-name="Phanzo"
+                    data-role="Elder"
+                    data-domain="Immortal Orchards"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/phanzo.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Phanzo</h4>
+                    </div>
+                  </div>
+
+                  <div
+                    class="select-card"
+                    data-name="Serenhell"
+                    data-role="Elder"
+                    data-domain="Immortal Orchards"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/serenhell.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Serenchell</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sword Terrace -->
+              <div class="domain-section">
+                <div class="domain-label">
+                  <h4>Sword Terrace</h4>
+                  <p>Competitive (PvP)</p>
+                </div>
+                <div class="selection-grid">
+                  <div
+                    class="select-card"
+                    data-name="FreakyAlfonso"
+                    data-role="Elder"
+                    data-domain="Sword Terrace"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/freaky.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">FreakyAlfonso</h4>
+                    </div>
+                  </div>
+
+                  <div
+                    class="select-card"
+                    data-name="Purify"
+                    data-role="Elder"
+                    data-domain="Sword Terrace"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/purify.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Purify</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Jade Gate -->
+              <div class="domain-section">
+                <div class="domain-label">
+                  <h4>Jade Gate</h4>
+                  <p>Internal Affairs</p>
+                </div>
+                <div class="selection-grid">
+                  <div
+                    class="select-card"
+                    data-name="Rootie"
+                    data-role="Elder"
+                    data-domain="Jade Gate"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <span class="placeholder-icon">✦</span>
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Rootie</h4>
+                    </div>
+                  </div>
+
+                  <div
+                    class="select-card"
+                    data-name="Eunhyan"
+                    data-role="Elder"
+                    data-domain="Jade Gate"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/eunhyan.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Eunhyan</h4>
+                    </div>
+                  </div>
+
+                  <div
+                    class="select-card"
+                    data-name="Entice"
+                    data-role="Elder"
+                    data-domain="Jade Gate"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/entice.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Entice</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scripture Pavilion -->
+              <div class="domain-section">
+                <div class="domain-label">
+                  <h4>Scripture Pavilion</h4>
+                  <p>Enlightenment</p>
+                </div>
+                <div class="selection-grid">
+                  <div
+                    class="select-card"
+                    data-name="K「凌尼尔」"
+                    data-role="Elder"
+                    data-domain="Scripture Pavilion"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/k.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">K「凌尼尔」</h4>
+                    </div>
+                  </div>
+
+                  <div
+                    class="select-card"
+                    data-name="Tomashii"
+                    data-role="Elder"
+                    data-domain="Scripture Pavilion"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/tomashii.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Tomashii</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Harmonic Spring -->
+              <div class="domain-section">
+                <div class="domain-label">
+                  <h4>Harmonic Spring</h4>
+                  <p>Communications</p>
+                </div>
+                <div class="selection-grid">
+                  <div
+                    class="select-card"
+                    data-name="Zhenyuė"
+                    data-role="Elder"
+                    data-domain="Harmonic Spring"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/zhenyue.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Zhenyuė</h4>
+                    </div>
+                  </div>
+
+                  <div
+                    class="select-card"
+                    data-name="Kyunah"
+                    data-role="Elder"
+                    data-domain="Harmonic Spring"
+                    data-icon="✦"
+                  >
+                    <div class="select-photo">
+                      <div class="photo-placeholder">
+                        <img
+                          src="assets/kyunah.jpg"
+                          alt="Member Name"
+                          class="member-image"
+                        />
+                      </div>
+                    </div>
+                    <div class="select-info">
+                      <h4 class="select-name">Kyunah</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="why-section" id="why-wysteria">
+      <video autoplay muted loop playsinline class="why-video">
+        <source src="background/why-background.mp4" type="video/mp4" />
+      </video>
+      <div class="border-overlay"></div>
+      <div class="dirt-overlay"></div>
+      <div class="vignette-overlay"></div>
+
+      <div class="why-content">
+        <!-- Decorative corner elements -->
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+
+        <!-- Main content area -->
+        <div class="why-main">
+          <div class="why-header">
+            <h2 class="section-title">Why Wysteria</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <div class="why-text">
+            <p class="why-paragraph">
+              Look, there are a lot of guilds out there. But not many where
+              you'll actually feel like you
+              <span class="highlight">belong</span>.
+            </p>
+
+            <p class="why-paragraph">
+              We're building something <span class="highlight">real</span> here
+              — a community that supports each other, grows together, and
+              actually has fun playing the game.
+            </p>
+
+            <p class="why-paragraph emphasis">
+              And yeah, we can get a bit freaky sometimes. Especially the
+              Elders.
+            </p>
+
+            <p class="why-paragraph">
+              But that's part of the vibe. Everyone's welcome to join in on the
+              chaos, the laughs, and the random moments that makes our day more
+              better and less like a dull one.
+            </p>
+
+            <p class="why-paragraph">
+              Whether you're here for serious gameplay or just to hang out and
+              enjoy the ride, you'll fit right in.
+            </p>
+
+            <p class="why-closing">
+              If that sounds like what you're looking for, come check us out.
+              <strong>We'd love to have you.</strong>
+            </p>
+          </div>
+
+          <!-- Discord CTA -->
+          <div class="discord-cta">
+            <a
+              href="https://discord.gg/your-server"
+              class="discord-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="discord-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"
+                />
+              </svg>
+              <span class="btn-text">Join Our Discord</span>
+              <span class="btn-arrow">→</span>
+            </a>
+
+            <p class="discord-note">
+              Click to join our community and start your journey
+            </p>
+          </div>
+
+          <!-- Decorative elements -->
+          <div class="ink-splash ink-splash-1"></div>
+          <div class="ink-splash ink-splash-2"></div>
+        </div>
+      </div>
+
+      <!-- Atmospheric particles -->
+      <div class="particles"></div>
+    </section>
+    <audio id="bgAudio" autoplay loop muted>
+      <source src="audio/bg.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const audio = document.getElementById("bgAudio");
+
+      document.addEventListener(
+        "click",
+        () => {
+          audio.muted = false;
+          audio.volume = 0.02;
+          audio.play();
+        },
+        { once: true },
+      );
+    </script>
+    <script src="js/parallax.js"></script>
+    <script src="js/scroll-indicator.js"></script>
+    <script src="js/char_selection.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/scroll-indicator.js"></script>
+    <script src="js/hamburger.js"></script>
+    <script src="js/loader.js"></script>
+  </body>
+</html>
