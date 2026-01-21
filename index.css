@@ -152,7 +152,7 @@ body {
   position: absolute;
   inset: 0;
   background: url("assets/asfalt-dark.png") repeat center / cover;
-  opacity: 0.4;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 2;
   filter: invert(1);
@@ -245,7 +245,7 @@ body {
   object-fit: cover;
   transform-origin: center center;
   will-change: transform;
-  filter: brightness(1) contrast(1) sepia(0.4);
+  filter: brightness(1) contrast(1.1) sepia(0.4);
 }
 
 .why-video {
@@ -257,7 +257,7 @@ body {
   object-fit: cover;
   transform-origin: center center;
   will-change: transform;
-  filter: brightness(0.5) contrast(1) sepia(0.4);
+  filter: brightness(0.3) contrast(1) sepia(0.4);
 }
 
 .hero-menu::before {
@@ -327,7 +327,7 @@ body {
   position: relative;
   text-decoration: none;
   color: #fff;
-  font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem);
   transition: all 0.3s ease;
   white-space: nowrap;
 }
