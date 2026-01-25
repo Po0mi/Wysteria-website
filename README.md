@@ -1,3 +1,8 @@
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JS-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
+
 # 🌸 Wysteria Website
 
 Welcome to the official website of **Wysteria** — a **PvX-competitive-focused guild** that values **community, growth, and good vibes**!  
